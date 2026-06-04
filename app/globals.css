@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy:   #060E2A;
+  --navy-l: #0B1640;
+  --gold:   #C9A84C;
+  --gold-l: #E2CF96;
+  --cream:  #FDFCF8;
+  --border: rgba(255,255,255,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: hidden; }
+body {
+  background: #080F25;
+  color: #E2E8F0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+
+/* Input */
+.field {
+  width: 100%; padding: 11px 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 8px; color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem;
+  outline: none; transition: border-color 0.15s;
+}
+.field:focus { border-color: var(--gold); }
+.field::placeholder { color: rgba(255,255,255,0.25); }
+.field-label {
+  display: block; font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(226,232,240,0.4); margin-bottom: 5px;
+}
+
+/* Buttons */
+.btn-gold {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 24px; background: var(--gold); color: var(--navy);
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem;
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  border: none; border-radius: 8px; cursor: pointer;
+  text-decoration: none; transition: background 0.15s; white-space: nowrap;
+}
+.btn-gold:hover { background: var(--gold-l); }
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 11px 24px; background: transparent; color: rgba(226,232,240,0.6);
+  font-size: 0.78rem; font-weight: 600;
+  border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px;
+  cursor: pointer; text-decoration: none; transition: all 0.15s; white-space: nowrap;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.3); color: #fff; }
+
+/* Provider button */
+.provider-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 12px; border-radius: 8px; cursor: pointer;
+  font-size: 0.85rem; font-weight: 600; transition: all 0.15s;
+  background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1);
+  color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.provider-btn:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.2); }
+
+/* Product card in hub */
+.product-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 20px;
+  transition: all 0.2s; cursor: pointer;
+  text-decoration: none; display: block;
+}
+.product-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-2px); }
+.product-card.owned { border-color: rgba(52,211,153,0.25); }
+
+/* Badge */
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.badge-active   { background: rgba(52,211,153,0.12);  color: #34D399; }
+.badge-pending  { background: rgba(201,168,76,0.12);  color: var(--gold); }
+.badge-inactive { background: rgba(239,68,68,0.1);   color: #F87171; }
+
+/* Divider with text */
+.divider { display: flex; align-items: center; gap: 12px; color: rgba(226,232,240,0.25); font-size: 0.78rem; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
