@@ -4,11 +4,7 @@ const nextConfig = {
     serverComponentsExternalPackages: ["bcryptjs"],
   },
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "lh3.googleusercontent.com" },
-      { protocol: "https", hostname: "avatars.githubusercontent.com" },
-      { protocol: "https", hostname: "graph.microsoft.com" },
-    ],
+    domains: ["lh3.googleusercontent.com", "avatars.githubusercontent.com", "graph.microsoft.com"],
   },
 };
 export default nextConfig;

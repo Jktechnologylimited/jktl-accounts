@@ -1,5 +1,5 @@
 {
-  "name": "accounts-jktl",
+  "name": "jktl-accounts",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,15 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@auth/core": "^0.41.2",
     "@neondatabase/serverless": "^1.1.0",
     "bcryptjs": "^3.0.3",
     "jsonwebtoken": "^9.0.3",
     "next": "16.2.7",
     "next-auth": "^5.0.0-beta.31",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "resend": "^6.12.4"
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
