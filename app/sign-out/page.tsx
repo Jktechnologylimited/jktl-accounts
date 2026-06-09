@@ -4,6 +4,10 @@ import { signOut } from "next-auth/react";
 
 export default function SignOutPage() {
   useEffect(() => {
+    // Clear any cached session flags
+    try { sessionStorage.removeItem("jktl_session"); } catch {}
+    try { localStorage.removeItem("jktl_session"); } catch {}
+    // Sign out and redirect to sign-in
     signOut({ callbackUrl: "/sign-in" });
   }, []);
 

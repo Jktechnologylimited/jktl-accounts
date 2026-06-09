@@ -21,18 +21,19 @@ function SignInContent() {
     setLoading(false);
     if (res?.error) { setError("Incorrect email or password"); return; }
 
-    // Redirect back to return URL
-    // In production the shared .jktl.com.ng cookie handles auth automatically
-    // In local dev (different ports) we append a bypass flag so the onboarding loads
+    // Always use window.location.href -- router.push() cannot cross domains
     const decoded = decodeURIComponent(returnUrl);
+
+    // Local dev: different ports need mock bypass since cookie can't cross ports
     const isLocalDev = decoded.includes("localhost") && !decoded.includes("localhost:3001");
+
     if (isLocalDev) {
-      // Add mock=bypass for local cross-port dev testing
       const url = new URL(decoded);
       url.searchParams.set("mock", "bypass");
       window.location.href = url.toString();
     } else {
-      router.push(decoded);
+      // Production: cookie is shared across .jktl.com.ng -- just redirect
+      window.location.href = decoded;
     }
   }
 
