@@ -44,15 +44,15 @@ export default async function DashboardPage() {
             You do not have any active Desk products. Choose one below -- self-service onboarding takes less than 10 minutes.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="http://localhost:3000/get-started/faithdesk"
+            <a href={`${process.env.NEXT_PUBLIC_MAIN_SITE || "https://jktl.com.ng"}/get-started/faithdesk`}
               style={{ display: "inline-flex", alignItems: "center", padding: "11px 24px", borderRadius: 8, fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.08em", background: "#8B5CF6", color: "#fff", textDecoration: "none" }}>
               Get FaithDesk
             </a>
-            <a href="http://localhost:3000/get-started/detaildesk"
+            <a href={`${process.env.NEXT_PUBLIC_MAIN_SITE || "https://jktl.com.ng"}/get-started/detaildesk`}
               style={{ display: "inline-flex", alignItems: "center", padding: "11px 24px", borderRadius: 8, fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.08em", background: "#F59E0B", color: "#060E2A", textDecoration: "none" }}>
               Get DetailDesk
             </a>
-            <a href="http://localhost:3000/get-started"
+            <a href={`${process.env.NEXT_PUBLIC_MAIN_SITE || "https://jktl.com.ng"}/get-started`}
               style={{ display: "inline-flex", alignItems: "center", padding: "11px 24px", borderRadius: 8, fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.08em", background: "rgba(255,255,255,0.06)", color: "rgba(226,232,240,0.7)", border: "1px solid rgba(255,255,255,0.1)", textDecoration: "none" }}>
               View All
             </a>
@@ -116,7 +116,7 @@ export default async function DashboardPage() {
               </div>
             );
           })}
-          <a href="http://localhost:3000/get-started"
+          <a href={`${process.env.NEXT_PUBLIC_MAIN_SITE || "https://jktl.com.ng"}/get-started`}
             style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px", borderRadius: 10, border: "1.5px dashed rgba(255,255,255,0.1)", color: "rgba(226,232,240,0.35)", textDecoration: "none", fontSize: "0.82rem", fontWeight: 600 }}>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             Add another product
@@ -129,7 +129,7 @@ export default async function DashboardPage() {
         {[
           { href: "/dashboard/billing", icon: "BL", label: "Billing & Payments",   desc: "Invoices, subscriptions, payment history" },
           { href: "/dashboard/profile", icon: "PR", label: "Account Settings",      desc: "Update your name, email, and password" },
-          { href: "http://localhost:3000/affiliates", icon: "AF", label: "Affiliate Programme", desc: "Earn by referring businesses to Desk" },
+          { href: `${process.env.NEXT_PUBLIC_MAIN_SITE || "https://jktl.com.ng"}/affiliates`, icon: "AF", label: "Affiliate Programme", desc: "Earn by referring businesses to Desk" },
         ].map(item => (
           <a key={item.href} href={item.href}
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "20px", textDecoration: "none", display: "block", transition: "background 0.15s" }}>

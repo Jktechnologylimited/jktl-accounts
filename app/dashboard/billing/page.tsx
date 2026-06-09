@@ -36,7 +36,7 @@ export default async function BillingPage() {
         <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "48px 32px", textAlign: "center" as const }}>
           <p style={{ fontWeight: 700, color: "#fff", marginBottom: 8 }}>No active subscriptions</p>
           <p style={{ fontSize: "0.85rem", color: "rgba(226,232,240,0.4)", marginBottom: 24 }}>Get a Desk product to see billing here.</p>
-          <a href="http://localhost:3000/get-started"
+          <a href={`${process.env.NEXT_PUBLIC_MAIN_SITE || "https://jktl.com.ng"}/get-started`}
             style={{ display: "inline-flex", padding: "11px 28px", borderRadius: 8, fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase" as const, letterSpacing: "0.08em", background: "#C9A84C", color: "#060E2A", textDecoration: "none" }}>
             Get a Product
           </a>
