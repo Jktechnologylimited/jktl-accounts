@@ -22,7 +22,10 @@ function SignInContent() {
     if (res?.error) { setError("Incorrect email or password"); return; }
 
     // Always use window.location.href -- router.push() cannot cross domains
-    const decoded = decodeURIComponent(returnUrl);
+    let decoded = decodeURIComponent(returnUrl);
+
+    // Strip www. -- cookie is on .jktl.com.ng not www.jktl.com.ng
+    decoded = decoded.replace("://www.jktl.com.ng", "://jktl.com.ng");
 
     // Local dev: different ports need mock bypass since cookie can't cross ports
     const isLocalDev = decoded.includes("localhost") && !decoded.includes("localhost:3001");
