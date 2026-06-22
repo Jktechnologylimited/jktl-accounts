@@ -129,6 +129,7 @@ export default async function DashboardPage() {
         {[
           { href: "/dashboard/billing", icon: "BL", label: "Billing & Payments",   desc: "Invoices, subscriptions, payment history" },
           { href: "/dashboard/profile", icon: "PR", label: "Account Settings",      desc: "Update your name, email, and password" },
+          { href: `${process.env.NEXT_PUBLIC_MAIN_SITE || "https://jktl.com.ng"}/faithdesk#learn`, icon: "LN", label: "Training Videos", desc: "Step-by-step video guides for FaithDesk and DetailDesk" },
           { href: `${process.env.NEXT_PUBLIC_MAIN_SITE || "https://jktl.com.ng"}/affiliates`, icon: "AF", label: "Affiliate Programme", desc: "Earn by referring businesses to Desk" },
         ].map(item => (
           <a key={item.href} href={item.href}
